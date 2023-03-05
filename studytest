@@ -1,0 +1,8 @@
+void()
+{
+  printf("test");
+}
+int main()
+{
+  test();
+}
