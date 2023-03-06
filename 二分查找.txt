@@ -1,0 +1,33 @@
+int main()
+{	//有序数组的二分查找
+	int num = 0;
+	printf("请输入你想要查找的数：");
+	scanf("%d", &num);
+	int arr[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+	int len = sizeof(arr) / sizeof(arr[0]);//取到数组的个数
+	int left = 0;//数组的左下标
+	int right = len - 1;//右下标
+	
+	while (left <= right)//当left<right时，继续进行查找，否者退出循环
+	{
+		int mid = (left + right) / 2;//取到数组中间值的下标；
+		if (num > arr[mid])
+		{
+			left = mid + 1;
+		}
+		else if (num<arr[mid])
+		{
+			right = mid - 1;
+		}
+		else
+		{
+			printf("找到了这个数，这个数的下标是：%d\n", mid);
+			break;//找到了这个数  结束while循环。
+		}
+	}
+	if (left > right)
+	{
+		printf("未找到这个数字!\n");
+	}
+	return 0;
+}
