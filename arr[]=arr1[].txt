@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<string.h>
+#include<Windows.h>
+
+int main()
+{
+	//打印welcome to WH!!
+	//在##########中两边打印
+	char arr[] = { "welcome to WH!!!" };
+	char arr2[] = {"                " }; 
+	//int len2 = sizeof(arr2) / sizeof(arr2[1]-2);
+	int len2 = strlen(arr);
+	//int len= sizeof(arr) / sizeof(arr[1]-2);
+	int len = strlen(arr2);
+	int left = 0;
+	int right = len-1 ;
+	
+
+	while (left <= right)
+	{
+		arr2[left] = arr[left];
+		arr2[right] = arr[right];
+		left++;
+		right--;
+		printf("%s\n", arr2);
+		//用sleep函数需要头文件Windows.h
+		Sleep(1000);
+		system("cls");
+	}
+	printf("%s\n", arr2);
+	//printf("%c\n", arr);
+	return 0;
+
+}
